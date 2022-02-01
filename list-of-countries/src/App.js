@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import ListContainer from './features/ListContainer.js';
 import './App.css';
 

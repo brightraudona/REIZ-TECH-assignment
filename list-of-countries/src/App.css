@@ -1,10 +1,27 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
 html {
   background-color: #E3FFE3;
 }
 
 .App {
+  background-color: #E3FFE3;
   font-family:'Roboto';
   margin: auto;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.Item {
+  background-color: #CCFFCC;
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.element {
+  display: inline;
+}
+
+.Title {
+  padding-bottom: 5%;
 }

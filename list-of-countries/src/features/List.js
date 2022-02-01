@@ -39,7 +39,7 @@ class List extends Component {
             return (
                 <div>
                     {this.state.countries.data.map((item, index) => (
-                        <Item key={index} item={item}/>
+                        <Item key={index} index={index} item={item}/>
                     ))}
                 </div>
             )

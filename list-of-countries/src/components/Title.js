@@ -1,7 +1,8 @@
-export default function Item(props, key) {
+
+export default function Title() {
     return (
-        <div className="text-md-left">
-            <h1>REIZ TECH homework assignment document for frontend developer intern position</h1>
+        <div className="Title pb-5">
+            <h1 className="pb-5">REIZ TECH homework assignment document for frontend developer intern position</h1>
         </div>
     )
 }
