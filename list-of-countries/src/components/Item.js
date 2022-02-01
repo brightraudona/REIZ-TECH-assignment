@@ -6,4 +6,4 @@ export default function Item(props) {
             <div>Continent: {props.item.continents[0]}</div>
         </div>
     )
-}//#CCFFCC
+}

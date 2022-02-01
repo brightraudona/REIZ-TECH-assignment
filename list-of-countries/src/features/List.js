@@ -1,50 +1,19 @@
-import { Component } from 'react';
 import Item from '../components/Item.js';
-//import Item from '../components/Item';
-const axios = require('axios');
 
-class List extends Component {
-    state = {
-        countries: null,
-    };
-  
-    componentDidMount() {
-      this._asyncRequest = axios({
-        method: 'get',
-        "url": "https://restcountries.com/v3.1/all"
-      }).then(
-        countries => {
-          this._asyncRequest = null;
-          this.setState({countries});
-        }
-      );
-    }
-  
-    componentWillUnmount() {
-      if (this._asyncRequest) {
-        this._asyncRequest.cancel();
-      }
-    }
-  
-    render() {
-        if (this.state.countries === null) {
-            // Render loading state ...
-            console.log("loading...");
-            return (
-                <header>Loading...</header>
-            )
-        } else {
-            // Render real UI ...
-            console.log(this.state.countries);
-            return (
-                <div>
-                    {this.state.countries.data.map((item, index) => (
-                        <Item key={index} index={index} item={item}/>
-                    ))}
-                </div>
-            )
-        }
-    }
+export default function List (props) {
+  return (
+      <div>
+      <button className="button" onClick={props.onAreaClick}> filter smaller then Lithuania </button>
+      <button className="button" onClick={props.onOcianaClick}> filter in Oceania region </button>
+      <button style={{float:'right'}} onClick={props.onRestoreClick}> Restore </button>
+      <div style={{display: 'inline'}}>Countries: {props.Item.length}</div>
+      <div>
+          {props.Item.map((item, index) => (
+              <Item key={index} index={index} item={item}/>
+
+          ))}
+      </div>
+      <p style={{float:'right'}}>Made by: Matas Togobickij</p>
+      </div>
+  )
 }
-
-export default List;
